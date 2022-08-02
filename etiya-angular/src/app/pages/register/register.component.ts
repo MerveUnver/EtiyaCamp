@@ -21,10 +21,7 @@ export class RegisterComponent implements OnInit {
 
   createRegisterForm(): void{
     this.registerForm = this.formBuilder.group({
-      companyName: [
-        '', //default
-        [Validators.required,Validators.minLength(2)] //doğrulama 
-      ],
+      companyName: [ '', [Validators.required,Validators.minLength(2)]],
       contactName: ['',[Validators.required,Validators.minLength(2)]],
       contactTitle: ['',[Validators.required,Validators.minLength(2)]],
       street: ['',Validators.required],
