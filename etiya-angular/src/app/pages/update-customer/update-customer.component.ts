@@ -60,7 +60,7 @@ export class UpdateCustomerComponent implements OnInit {
     const customer:Customer = Object.assign({id:this.customer.id}, this.customerForm.value); 
       this.customersService.update(customer).subscribe(() => {
         setTimeout(() => {
-          this.router.navigateByUrl("/dashboard/customers");
+          this.router.navigateByUrl("/customer-dashboard/customers");
           this.toastr.success("Customer succesfully updated!","Update")
         }, 1000);
       });
@@ -85,7 +85,7 @@ export class UpdateCustomerComponent implements OnInit {
     this.customersService.add(customer).subscribe(response =>{
       setTimeout(() => {
         this.toastr.success("Customer succesfully add!","Add")
-        this.router.navigateByUrl("/dashboard/customers");
+        this.router.navigateByUrl("/customer-dashboard/customers");
       }, 1000);
     })
   }

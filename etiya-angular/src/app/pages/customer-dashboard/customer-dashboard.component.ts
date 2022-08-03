@@ -4,11 +4,11 @@ import { CustomersService } from 'src/app/services/customers/customers.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-customer-dashboard',
+  templateUrl: './customer-dashboard.component.html',
+  styleUrls: ['./customer-dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class CustomerDashboardComponent implements OnInit {
   customerList!:Customer[];
 
   constructor(private customersService:CustomersService, private router:Router) { }

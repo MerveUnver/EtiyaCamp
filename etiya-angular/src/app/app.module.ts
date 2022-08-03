@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -11,12 +10,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CategoryListComponent } from './components/category-list/category-list.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CustomerFormComponent } from './pages/customer-form/customer-form.component';
+import { CustomerDashboardComponent } from './pages/customer-dashboard/customer-dashboard.component';
 import { UpdateCustomerComponent } from './pages/update-customer/update-customer.component'
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { KdvPipe } from './pipes/kdv.pipe';
+import { SaleDirective } from './directives/sale/sale.directive';
+import { ProductDashboardComponent } from './pages/product-dashboard/product-dashboard/product-dashboard.component';
+import { ProductFormComponent } from './pages/product-form/product-form/product-form.component';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +31,13 @@ import { ToastrModule } from 'ngx-toastr';
     NavbarComponent,
     ProductCardComponent,
     CategoryListComponent,
-    RegisterComponent,
-    DashboardComponent,
-    UpdateCustomerComponent
+    CustomerFormComponent,
+    CustomerDashboardComponent,
+    UpdateCustomerComponent,
+    KdvPipe,
+    SaleDirective,
+    ProductDashboardComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
