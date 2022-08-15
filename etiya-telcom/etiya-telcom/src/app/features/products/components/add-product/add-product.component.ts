@@ -66,7 +66,7 @@ export class AddProductComponent implements OnInit {
     const product:Product = Object.assign({id:this.product.id}, this.productForm.value);
       this.productService.update(product).subscribe(()=>{
         setTimeout(()=>{
-          this.router.navigateByUrl("products");
+          this.router.navigateByUrl("home");
         },1000)
       })
   }
@@ -83,7 +83,7 @@ export class AddProductComponent implements OnInit {
     this.productService.add(product).subscribe(()=>{
       setTimeout(()=> {
         
-        this.router.navigateByUrl("products");
+        this.router.navigateByUrl("home");
       },1000);
     })
   }

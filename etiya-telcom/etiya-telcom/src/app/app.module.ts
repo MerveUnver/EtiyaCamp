@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { ProductsModule } from './features/products/products.module';
+import { CoreModule } from './core/core.module';
+
 
 
 
@@ -21,6 +23,7 @@ import { ProductsModule } from './features/products/products.module';
     SharedModule,
     FeaturesModule,
     ProductsModule,
+    CoreModule,
 
 
   ],
