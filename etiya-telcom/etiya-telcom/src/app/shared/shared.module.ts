@@ -1,3 +1,5 @@
+import { CoreModule } from './../core/core.module';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -27,7 +29,9 @@ import { SpinnerInterceptor } from '../core/interceptors/spinner.interceptor';
   ],
   imports: [
     CommonModule,
-    SkeletonModule
+    SkeletonModule,
+    RouterModule,
+    CoreModule
   ],
   exports:[
     NavbarComponent,

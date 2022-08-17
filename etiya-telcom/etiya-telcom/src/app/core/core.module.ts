@@ -8,9 +8,19 @@ import { LoginComponent } from './auth/pages/login/login.component';
 import { StorageModule } from './storage/storage.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreRoutingModule } from './core-routing.module';
+import { LocalStorageService } from './storage/services/local-storage.service';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { StorageService } from './storage/services/storageService';
 
 
-
+export function jwtOptionsFactory(storageService: StorageService) {
+  return {
+    tokenGetter: () => {
+      return storageService.get('token');
+    },
+    allowedDomains: ['localhost:3000'],
+  };
+}
 @NgModule({
   declarations: [
     EnumeratePipe,
@@ -23,7 +33,14 @@ import { CoreRoutingModule } from './core-routing.module';
     StorageModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    JwtModule.forRoot({
+      jwtOptionsProvider: {
+        provide: JWT_OPTIONS,
+        useFactory: jwtOptionsFactory,
+        deps: [LocalStorageService],
+      },
+    }),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true },
